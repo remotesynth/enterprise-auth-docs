@@ -1,0 +1,1 @@
+Getting SAML info from Azure and adding those to Sidekick.

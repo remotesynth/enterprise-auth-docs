@@ -1,0 +1,1 @@
+Getting OpenID info from Azure and adding those to Sidekick.
