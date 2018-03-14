@@ -80,7 +80,7 @@ In order to test the log in process, Azure Active Directory will need a user. To
 
 * **Client ID** is the application ID found by going to Azure Active Directory and then choosing "App registrations".
 
-  ![Application ID](images/applicationid.png)
+  ![Application ID](images/applicationID.png)
 
 * **Client Secret** is the value of the key created in step 8 above. If you did not copy the key during that step, it is hidden and you'll simply need to create a new key.
 * **User ID Attribute** and **User ID Endpoint** can both be blank.
