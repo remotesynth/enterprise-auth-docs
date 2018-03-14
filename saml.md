@@ -5,7 +5,11 @@ position: 2
 publish: true
 ---
 
-Getting SAML info from Azure and adding those to Sidekick.
+SAML, or Security Assertion Markup Language, is a standard for exchanging authentication and authorization data between security domains.
+
+NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via SAML. Let’s 
+
+## Configuring your connection
 
 Form fields:
 
