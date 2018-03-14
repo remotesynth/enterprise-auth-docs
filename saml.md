@@ -1,3 +1,10 @@
+---
+title: Configuring SAML-Redirect Authentication
+description: ...
+position: 2
+publish: true
+---
+
 Getting SAML info from Azure and adding those to Sidekick.
 
 Form fields:
