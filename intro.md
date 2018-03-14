@@ -13,17 +13,22 @@ NativeScript Sidekick lets you connect to existing enterprise identity and singl
 
 Let’s see how it all works.
 
-## Selecting an authentication service
+## Step 1. Select an authentication service
 
 On the Enterprise Auth screen the first thing you’ll see is a collection of radio buttons, asking you to choose between **SAML-Redirect**, **OpenID Connect**, and **OAuth 2**.
 
 ![](images/selecting-authentication-service.png)
 
-So... how to do you choose?
+TODO: HOW DO YOU KNOW WHICH AUTHENTICATION SERVICE YOUR ENTERPRISE IS USING111!!!!11!!!??@111!!24!!!?
 
+## Step 2: Complete the configuration
 
+Each authentication services requires a different set of values needed to make the connection. Therefore, refer to one of the following guides to help complete the rest of the necessary configuration.
 
+* [Configuring **SAML-Redirect** Authentication](saml.md)
+* [Configuring **OpenID Connect** Authentication](openid.md)
+* [Configuring **OAuth 2** Authentication](oauth2.md)
 
-## Running your app
+## Step 3: Run your app
 
-
+TODO: Complete this section once we have the authentication template in Sidekick and can run apps using this workflow
