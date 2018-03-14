@@ -25,9 +25,9 @@ Here is a list of the fields you need to provide in Sidekick, and a brief descri
 
 |Field name|Description|
 | ------------- |:-------------:|
-|Name|The name can be anything you choose and is simply intended an an identifier to make it easier find your authentication service within the Kinvey console.|
-|Provider URI|In OAuth terms, this is usually referred to as the token endpoint for the authentication service that you are connecting to|
-|Grant Endpoint|In OAuth terms, this is usually referred to as the authorization endpoint for the authentication service that you are connecting to|
+|Name|The name can be anything you choose. NativeScript Sidekick will create a new service in Kinvey and the name is simply intended an an identifier to make it easier find your authentication service within the [Kinvey console](https://console.kinvey.com/).|
+|Provider URI|In OAuth terms, this is usually referred to as the *token endpoint* for the authentication service that you are connecting to|
+|Grant Endpoint|In OAuth terms, this is usually referred to as the *authorization endpoint* for the authentication service that you are connecting to|
 |Client ID|This is the public identifier for your app that is provided by the authentication service that you are connecting to. In some cases (as in our Azure example below), this may be referred to as an application ID.|
 |Client Secret|This is a private app key provided by the authentication service that you are connecting to.|
 |User ID Attribute|This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service places the user ID in an attrbute other than the default `id_token`.|
@@ -40,11 +40,11 @@ Once all the fields are filled in appropriately, click the "Save Service" button
 
 ## Example - Azure Active Directory
 
-While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. In this example, we'll set up Azure Active Directory and fill out the form with the values required to connect it within the Enterprise Authentication form in NativeScript Sidekick.
+While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. On of these services is an Active Directory service called Azure Active Directory that functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory and fill out the form with the values required to connect it within the Enterprise Authentication form in NativeScript Sidekick.
 
 ### Setting Up Azure AD
 
-The following steps will walk you through creating a new Azure Active Directory from scratch. If you already have Azure AD set up, simply skip the first step.
+The following steps will walk you through creating a new Azure Active Directory from scratch. If you already have Azure AD set up, simply skip step 1 below and complete steps 2 through 8.
 
 1. From within the [Azure portal](https://portal.azure.com), click on Azure Active Directory or click on +New and search for Azure Active Directory.
 
@@ -85,6 +85,8 @@ The following steps will walk you through creating a new Azure Active Directory 
 In order to test the log in process, Azure Active Directory will need a user. To add a user, go to Active Directory, click "Users and Groups", then "All Users", and finally "New User". For testing purposes, you could add yourself.
 
 ### Enterprise Authentication Form Field Values for Azure
+
+Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
 
 * **Name**: Any name you choose.
 * **Provider URI** and **Grant Endpoint**: To get these values from within Azure, go to Azure Active Directory, choose "App registrations" and then "Endpoints".
