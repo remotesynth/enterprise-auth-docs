@@ -1,10 +1,27 @@
-# Enterprise Authentication in NativeScript Sidekick with OAuth 2
+---
+title: Configuring OAuth 2 Authentication
+description: Learn how to configure and connect to an enterprise identity provider using OAuth 2.
+position: 2
+publish: true
+---
 
-Getting OAuth2 info from Azure and adding those to Sidekick.
+# Configuring OAuth 2 Authentication
+
+TODO: Super brief introduction to OAuth.
+
+NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via OAuth 2. In this article we’ll look at the various data points NativeScript Sidekick needs to make the connection, and then look at a concrete example of a sample connection using Microsoft Azure.
+
+## Configuring your connection
+
+The first thing you need to do to configure an OAuth 2 connection is to visit the **Enterprise Auth** screen and select the **OAuth 2** radio button. You should see a form that looks like this.
+
+![](images/oauth-form.png)
+
+First, let's take a closer look at the form fields required within NativeScript Sidekick to enable enterprise authentication using OAuth 2 for your project. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
 ## Form Fields
 
-First, let's take a closer look at the form fields required within NativeScript Sidekick to enable enterprise authentication using OAuth 2 for your project. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
+Here is a list of the fields you need to provide in Sidekick, and a brief description of what they are.
 
 |Field name|Description|
 | ------------- |:-------------:|
