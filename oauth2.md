@@ -15,7 +15,7 @@ First, let's take a closer look at the form fields required within NativeScript 
 |Client Secret|This is a private app key provided by the authentication service that you are connecting to.|
 |User ID Attribute|This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service places the user ID in an attrbute other than the default `id_token`.|
 |User ID Endpoint|This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service requires a separate endpoint to obtain the user ID|
-|Scope|stuff|
+|Scope|The scope defines what information your app requires access to from the OAuth authentication service provider. The specific scopes that you are requesting access to are displayed to the user by the provider when granting the authentication request. For example, a value of `profile` may indicate that you are requesting access to read the user's basic profile info from the authentication service while a value of `email` could indicate that you are requesting access to read their email address.|
 |Include client ID in token request?|stuff|
 |Include client secret in token request?|stuff|
 
