@@ -106,4 +106,6 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 * **Scope** should be set to `email` to give your app access to the user's email address.
 * **Include client ID in token request?** and **Include client secret in token request?** can both remain "No".
 
+TODO: add a screenshot of the filled in Sidekick form.
+
 Click the "Save Service" button and you are ready to move on to building and testing your NativeScript mobile app.
