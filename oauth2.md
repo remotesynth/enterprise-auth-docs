@@ -9,17 +9,15 @@ First, let's take a closer look at the form fields required within NativeScript 
 |Field name|Description|
 | ------------- |:-------------:|
 |Name|The name can be anything you choose and is simply intended an an identifier to make it easier find your authentication service within the Kinvey console.|
-|Provider URI|This is the token endpoint for the authentication service that you are connecting to|
-
-Grant Endpoint
-
-Client ID
-
-Client Secret
-
-User ID Attribute
-
-User ID Endpoint
+|Provider URI|In OAuth terms, this is usually referred to as the token endpoint for the authentication service that you are connecting to|
+|Grant Endpoint|In OAuth terms, this is usually referred to as the authorization endpoint for the authentication service that you are connecting to|
+|Client ID|This is the public identifier for your app that is provided by the authentication service that you are connecting to. In some cases (as in our Azure example below), this may be referred to as an application ID.|
+|Client Secret|This is a private app key provided by the authentication service that you are connecting to.|
+|User ID Attribute|This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service places the user ID in an attrbute other than the default `id_token`.|
+|User ID Endpoint|This is an optional field. In most cases, it can be left blank. It is necessary only if your authentication service requires a separate endpoint to obtain the user ID|
+|Scope|stuff|
+|Include client ID in token request?|stuff|
+|Include client secret in token request?|stuff|
 
 ## Example - Azure Active Directory
 
