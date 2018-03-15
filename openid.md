@@ -15,7 +15,7 @@ NativeScript Sidekick gives you the ability to connect to enterprise authenticat
 
 The first thing you need to do to configure an OpenID connection is to visit the **Enterprise Auth** screen and select the **OpenID Connect** radio button. You should see a form that looks like this.
 
-TODO: Open ID form image
+TODO: OpenID form image
 
 Let’s start by looking at the fields you need to provide to connect to your enterprise authentication provider. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
@@ -86,7 +86,7 @@ In order to test the log in process, Azure Active Directory will need a user. To
 Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
 
 * **Name**: Any name you choose.
-* **Provider URI**, **Grant Endpoint** and **Issuer Identifier** : All three of these values can be found in the Open ID Connect metadata document provided by Azure. Azure's [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-openid-connect-code#openid-connect-metadata-document) indicates that the Open ID Connect metadata document can be found at:
+* **Provider URI**, **Grant Endpoint** and **Issuer Identifier** : All three of these values can be found in the OpenID Connect metadata document provided by Azure. Azure's [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-openid-connect-code#openid-connect-metadata-document) indicates that the Open ID Connect metadata document can be found at:
 
   ```
   https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration
