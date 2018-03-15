@@ -13,7 +13,7 @@ NativeScript Sidekick gives you the ability to connect to enterprise authenticat
 
 ## Configuring your connection
 
-The first thing you need to do to configure an OAuth 2 connection is to visit the **Enterprise Auth** screen and select the **OpenID Connect** radio button. You should see a form that looks like this.
+The first thing you need to do to configure an OpenID connection is to visit the **Enterprise Auth** screen and select the **OpenID Connect** radio button. You should see a form that looks like this.
 
 TODO: Open ID form image
 
@@ -26,18 +26,18 @@ Here is a list of the fields you need to provide in Sidekick, and a brief descri
 |Field name|Description|
 | ------------- |:-------------:|
 |Name|The name can be anything you choose. NativeScript Sidekick will create a new service in Kinvey and the name is simply intended an an identifier to make it easier find your authentication service within the [Kinvey console](https://console.kinvey.com/).|
-|Provider URI|In OAuth terms, this is usually referred to as the *token endpoint* for the authentication service that you are connecting to|
-|Grant Endpoint|In OAuth terms, this is usually referred to as the *authorization endpoint* for the authentication service that you are connecting to|
+|Provider URI|In OpenID terms, this is usually referred to as the *token endpoint* for the authentication service that you are connecting to|
+|Grant Endpoint|In OpenID terms, this is usually referred to as the *authorization endpoint* for the authentication service that you are connecting to|
 |Client ID|This is the public identifier for your app that is provided by the authentication service that you are connecting to. In some cases (as in our Azure example below), this may be referred to as an application ID.|
 |Client Secret|This is a private app key provided by the authentication service that you are connecting to.|
-|Issue identifier|TODO|
-|Scope|The scope defines what information your app requires access to from the OAuth authentication service provider. The specific scopes that you are requesting access to are displayed to the user by the provider when granting the authentication request. For example, a value of `profile` may indicate that you are requesting access to read the user's basic profile info from the authentication service while a value of `email` could indicate that you are requesting access to read their email address.|
+|Issuer identifier|This is a case-sensistive URL that identifies the issuer of the response.|
+|Scope|The scope defines what information your app requires access to from the OpenID authentication service provider. The specific scopes that you are requesting access to are displayed to the user by the provider when granting the authentication request. For example, a value of `profile` may indicate that you are requesting access to read the user's basic profile info from the authentication service while a value of `email` could indicate that you are requesting access to read their email address.|
 
 Once all the fields are filled in appropriately, click the "Save Service" button to continue.
 
 ## Example - Azure Active Directory
 
-While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. On of these services is an Active Directory service called Azure Active Directory that functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory and fill out the form with the values required to connect it within the Enterprise Authentication form in NativeScript Sidekick.
+While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. On of these services is an Active Directory service called Azure Active Directory that functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory and fill out the form with the values required to connect it within the Enterprise Authentication form using OpenID Connect in NativeScript Sidekick.
 
 ### Setting Up Azure AD
 
@@ -86,22 +86,24 @@ In order to test the log in process, Azure Active Directory will need a user. To
 Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
 
 * **Name**: Any name you choose.
-* **Provider URI** and **Grant Endpoint**: To get these values from within Azure, go to Azure Active Directory, choose "App registrations" and then "Endpoints".
+* **Provider URI**, **Grant Endpoint** and **Issuer Identifier** : All three of these values can be found in the Open ID Connect metadata document provided by Azure. Azure's [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-openid-connect-code#openid-connect-metadata-document) indicates that the Open ID Connect metadata document can be found at:
 
-  ![Choosing the endpoints](images/endpoints1.png)
+  ```
+  https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration
+  ```
 
-  On the subsequent page, the Provider URI is the OAuth 2.0 Token Endpoint value and the Grant Enpoint is the  OAuth 2.0 Authorization Endpoint value.
+  The value of `{tenant}` is an identifier with Azure for your account. This information can be found by clicking on Azure Active Directory and choosing "Properties". The value of `{tenant}` is the value listed for "Directory ID".
 
-  ![Endpoints list](images/endpoints2.png)
+  ![Finding your tenant](images/tenant.png)
+
+  Replace the value of `{tenant}` in the URL and navigate to it. This page will contain some JSON formatted values. The value for Provider URI is listed as `token_endpoint`. The value for Grant Endpoint is listed as `authorization_endpoint`. Finally, the value for Issuer Identifier is listed as `issuer`
 
 * **Client ID** is the application ID found by going to Azure Active Directory and then choosing "App registrations".
 
   ![Application ID](images/applicationID.png)
 
 * **Client Secret** is the value of the key created in step 8 above. If you did not copy the key during that step, it is hidden and you'll simply need to create a new key.
-* **User ID Attribute** and **User ID Endpoint** can both be blank.
 * **Scope** should be set to `email` to give your app access to the user's email address.
-* **Include client ID in token request?** and **Include client secret in token request?** can both remain "No".
 
 TODO: add a screenshot of the filled in Sidekick form.
 

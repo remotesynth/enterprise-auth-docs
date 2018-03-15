@@ -40,7 +40,7 @@ Once all the fields are filled in appropriately, click the "Save Service" button
 
 ## Example - Azure Active Directory
 
-While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. On of these services is an Active Directory service called Azure Active Directory that functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory and fill out the form with the values required to connect it within the Enterprise Authentication form in NativeScript Sidekick.
+While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. On of these services is an Active Directory service called Azure Active Directory that functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory and fill out the form with the values required to connect it within the Enterprise Authentication form using OAuth 2 in NativeScript Sidekick.
 
 ### Setting Up Azure AD
 
@@ -93,7 +93,7 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 
   ![Choosing the endpoints](images/endpoints1.png)
 
-  On the subsequent page, the Provider URI is the OAuth 2.0 Token Endpoint value and the Grant Enpoint is the  OAuth 2.0 Authorization Endpoint value.
+  On the subsequent page, the Provider URI is the OAuth 2.0 Token Endpoint value and the Grant Endpoint is the OAuth 2.0 Authorization Endpoint value.
 
   ![Endpoints list](images/endpoints2.png)
 
