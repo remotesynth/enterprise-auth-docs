@@ -96,3 +96,5 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 TODO: add a screenshot of the filled in Sidekick form.
 
 Click the "Save Service" button and you are ready to move on to building and testing your NativeScript mobile app.
+
+* [Next step: Running your app](/sidekick/user-guide/enterprise-auth/intro#step-3)
