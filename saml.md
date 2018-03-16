@@ -26,9 +26,9 @@ Here is a list of the fields you need to provide in Sidekick, and a brief descri
 |Field name|Description|
 | ------------- |:-------------:|
 |Name|The name can be anything you choose. NativeScript Sidekick will create a new service in Kinvey and the name is simply intended an an identifier to make it easier find your authentication service within the [Kinvey console](https://console.kinvey.com/).|
-|Provider URI|This is the single sign on service URL where the request is initiated with the SAML authentication service that you are connecting to|
+|Provider URI|This is the single sign on service URL where the request is initiated with the SAML authentication service that you are connecting to.|
 |Certificate Text|This is the Base64 text of the SAML signing certificate provided by the SAML authentication service.|
-|Name ID Format URI|This is optional depending on the requirements of your SAML authentication provider. In simple terms, this specifies the kind of user identifier that the service will provide. The default value (`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`) allows the provider to determine the format it will send the user identifier as we are not specifying a format (i.e. `unspecified`)|
+|Name ID Format URI|This is optional depending on the requirements of your SAML authentication provider. In simple terms, this specifies the kind of user identifier that the service will provide. The default value (`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`) allows the provider to determine the format it will send the user identifier as we are not specifying a format (i.e. `unspecified`).|
 
 Once all the fields are filled in appropriately, click the "Save Service" button to continue.
 
@@ -44,28 +44,28 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 	![Azure AD](images/AzureAD.png)
 
-2. Choose the "App Registrations" option and "Enterprise applications".
+2. Choose the **App Registrations** option and **Enterprise applications**.
 	
 	![Enterprise applications](images/enterprise-applications.png)
 
-3. Click "+ New application" and then choose "Non-gallery application". Give your application a name (this can be whatever you like) and click "Add".
+3. Click **+ New application** and then choose **Non-gallery application**. Give your application a name (this can be whatever you like) and click **Add**.
 
   ![Non-gallery application](images/non-gallery-app.png)
 
-4. Click on "Configure single sign-on".
+4. Click on **Configure single sign-on**.
 
-![Configure single sign-on](images/configure-single-sign-on.png)
+![Configure single sign-on](images/configure-single-sign-in.png)
 
-5. Choose "SAML-based Sign-on" from the drop down.
+5. Choose **SAML-based Sign-on** from the drop down.
 
   ![SAML-based sign-on](images/saml-based.png)
 
 6. Fill in the following values:
 
-  * For "Identifier" enter `https://auth.kinvey.com/kinvey-mobile-identity-connect`
-  * For "Reply URL" entr `https://auth.kinvey.com/v3/saml/assertion`
-  * Click on "Show sdvanced URL settings"
-  * For "Sign on URL" enter `https://auth.kinvey.com/`
+  * For **Identifier** enter `https://auth.kinvey.com/kinvey-mobile-identity-connect`.
+  * For **Reply URL** enter `https://auth.kinvey.com/v3/saml/assertion`.
+  * Click on **Show sdvanced URL settings**.
+  * For **Sign on URL** enter `https://auth.kinvey.com/`.
 
   ![Azure SAML settings](images/saml-settings-azure.png)
 
@@ -73,16 +73,16 @@ The following steps will walk you through creating a new Azure Active Directory 
 
   ![Base64 signing certificate](images/signing-certificate.png)
 
-8. Click the "Save" button to save your settings.
+8. Click the **Save** button to save your settings.
 
-In order to test the log in process, your Azure Active Directory application will need a user. To add a user, click on the "Assign a user for testing" option within Azure's enterprise application quick start guide. The easiest way to start is by adding your own user to the application.
+In order to test the log in process, your Azure Active Directory application will need a user. To add a user, click on the **Assign a user for testing** option within Azure's enterprise application quick start guide. The easiest way to start is by adding your own user to the application.
 
-### Providing enterprise authentication form values for Azure
+### Providing SAML form values for Azure
 
 Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
 
 * **Name**: Any name you choose.
-* **Provider URI**: To get this value from within Azure, go to Azure Active Directory, choose "App registrations" and then "Endpoints".
+* **Provider URI**: To get this value from within Azure, go to Azure Active Directory, choose **App registrations** and then **Endpoints**.
 
   ![Choosing the endpoints](images/endpoints1.png)
 
@@ -91,10 +91,12 @@ Now that our Azure Active Directory is set up, let's look at the values within A
   ![Endpoints list](images/saml-endpoints.png)
 
 * **Certificate text** is the contents of the Base64 signing certificate you downloaded. Open the file using a text editor and copy the contents between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines into the form field.
-* **Name ID Format URI** for Azure Active Directory should be `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. (You can find more information about the various values Azure accepts here and what they mean in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#nameidpolicy))
+* **Name ID Format URI** for Azure Active Directory should be `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. (You can find more information about the various values Azure accepts here and what they mean in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#nameidpolicy).)
 
-TODO: add a screenshot of the filled in Sidekick form.
+When you’re done your form should look something like this in Sidekick.
 
-Click the "Save Service" button and you are ready to move on to building and testing your NativeScript mobile app.
+![](images/saml-form-complete.png)
+
+Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 
 * [Next step: Running your app](/sidekick/user-guide/enterprise-auth/intro#step-3)
