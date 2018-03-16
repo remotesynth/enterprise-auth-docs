@@ -105,7 +105,7 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 
 When you’re done your form should look something like this in Sidekick.
 
-![](images/openid-form.png)
+![](images/openid-form-complete.png)
 
 Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 

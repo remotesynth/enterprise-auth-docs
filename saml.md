@@ -19,7 +19,7 @@ The first thing you need to do to configure a SAML-Redirect connection is to vis
 
 Let’s start by looking at the fields you need to provide to connect to your enterprise authentication provider. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
-## Form Fields
+## Completing the connection setup
 
 Here is a list of the fields you need to provide in Sidekick, and a brief description of what they are.
 
@@ -34,7 +34,7 @@ Once all the fields are filled in appropriately, click the "Save Service" button
 
 ## Example - Azure Active Directory
 
-While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. On of these services is an Active Directory service called Azure Active Directory that functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory and fill out the form with the values required to connect it within the Enterprise Authentication form using SAML-Redirect in NativeScript Sidekick.
+While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. On of these services is an Active Directory service called Azure Active Directory that functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory, and then we’ll fill out the appropriate SAML data in Sidekick to make the connection.
 
 ### Setting Up Azure AD
 
@@ -77,7 +77,7 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 In order to test the log in process, your Azure Active Directory application will need a user. To add a user, click on the "Assign a user for testing" option within Azure's enterprise application quick start guide. The easiest way to start is by adding your own user to the application.
 
-### Enterprise Authentication Form Field Values for Azure
+### Providing enterprise authentication form values for Azure
 
 Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
 
