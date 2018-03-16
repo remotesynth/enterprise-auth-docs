@@ -11,11 +11,25 @@ NativeScript Sidekick lets you connect to existing enterprise identity and singl
 
 This functionality also allows enterprise IT to ensure that access to resources is secured only to authenticated users, as well as maintaining full control over a mobile user's identity. 
 
-> **NOTE**: Sidekick’s enterprise authentication implementation is powered by [Progress Kinvey](https://www.kinvey.com/), a leading backend app development platform, with powerful capabilities to connect to and use enterprise data sources.
+Let’s look at how it works.
 
-Let’s see how it all works.
+* [Step 1. Start an app using the Enterprise Auth template](#step-2)
+* [Step 2. Select an authentication protocol](#step-2)
+* [Step 3: Complete the configuration](#step-3)
+* [Step 4: Run your app](#step-4)
+* [Step 5: MOAR KINVEY](#step-5)
 
-## Step 1. Select an authentication service
+<h2 id="step-1">Step 1. Start an app using the Enterprise Auth template</h2>
+
+As a first step, [create a new app](/sidekick/user-guide/create-app/create-app-from-template) using the Enterprise Auth template.
+
+![](images/sidekick-templates.png)
+
+Give your app a name, and click **Create**. Sidekick will take a minute to scaffold your app, and then you’ll be ready to set up the connection to your enterprise auth provider.
+
+<h2 id="step-2">Step 2. Select an authentication protocol</h2>
+
+> **WARNING**: Completing this authentication setup can be hard, as the information you need to obtain varies depending on your auth provider. Therefore, you might need to work with your IT admins to help get the information that you need to make the connection, especially if you’re not familiar with the infrastructure behind your auth provider.
 
 On the Enterprise Auth screen the first thing you’ll see is a collection of radio buttons, asking you to choose between **SAML-Redirect**, **OpenID Connect**, and **OAuth 2**.
 
@@ -25,19 +39,19 @@ Knowing which service you need means knowing a little bit about your enterprise 
 
 Once you’ve figured out which protocol your service supports, select the appropriate radio button and move on to the next step.
 
-## Step 2: Complete the configuration
+<h2 id="step-3">Step 3: Complete the configuration</h2>
 
-Each authentication services requires a different set of values needed to make the connection. Therefore, refer to one of the following guides to help complete the rest of the necessary configuration.
+Each authentication service requires a different set of values needed to make the connection. Therefore, refer to one of the following guides to help complete the rest of the necessary configuration.
 
 * [Configuring **SAML-Redirect** Authentication](saml.md)
 * [Configuring **OpenID Connect** Authentication](openid.md)
 * [Configuring **OAuth 2** Authentication](oauth2.md)
 
-## Step 3: Run your app
+<h2 id="step-4">Step 4: Run your app</h2>
 
 After you’ve completed the authentication setup, your last step is to run your app and see your new authentication workflow in action.
 
-> **TIP**: If you haven’t run an app on a device using NativeScript Sidekick before, check out the documentation on [running your app](https://docs.nativescript.org/sidekick/user-guide/run-app/run-app-on-device).
+> **TIP**: If you haven’t run an app on a device using NativeScript Sidekick before, check out our documentation on [running your app](https://docs.nativescript.org/sidekick/user-guide/run-app/run-app-on-device).
 
 After Sidekick deploys your new app to your device(s) you should see an app that looks like this.
 
@@ -47,6 +61,12 @@ When you tap the **Log in** button, if all went well, you should be prompted to 
 
 ![](images/app-auth-screen.png)
 
-> **NOTE**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [react out on the NativeScript community forum](https://discourse.nativescript.org/c/Sidekick).
+> **NOTE**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [reach out on the NativeScript community forum](https://discourse.nativescript.org/c/Sidekick).
 
 And that’s it! You’ve now successfully built an app that can connect to an enterprise authentication provider.
+
+<h2 id="step-5">Step 5: MOAR KINVEY</h2>
+
+Sidekick’s enterprise authentication implementation is powered by [Progress Kinvey](https://www.kinvey.com/), a leading backend app development platform, with powerful capabilities to connect to and use enterprise data sources.
+
+Here are some other things you can do.
