@@ -13,13 +13,13 @@ This functionality also allows enterprise IT to ensure that access to resources 
 
 Let’s look at how it works.
 
-* [Step 1. Start an app using the Enterprise Auth template](#step-2)
-* [Step 2. Select an authentication protocol](#step-2)
+* [Step 1. Start you app](#step-2)
+* [Step 2. Select a protocol](#step-2)
 * [Step 3: Complete the configuration](#step-3)
 * [Step 4: Run your app](#step-4)
 * [Step 5: MOAR KINVEY](#step-5)
 
-<h2 id="step-1">Step 1. Start an app using the Enterprise Auth template</h2>
+<h2 id="step-1">Step 1. Start your app</h2>
 
 As a first step, [create a new app](/sidekick/user-guide/create-app/create-app-from-template) using the Enterprise Auth template.
 
@@ -27,7 +27,7 @@ As a first step, [create a new app](/sidekick/user-guide/create-app/create-app-f
 
 Give your app a name, and click **Create**. Sidekick will take a minute to scaffold your app, and then you’ll be ready to set up the connection to your enterprise auth provider.
 
-<h2 id="step-2">Step 2. Select an authentication protocol</h2>
+<h2 id="step-2">Step 2. Select a protocol</h2>
 
 > **WARNING**: Completing this authentication setup can be hard, as the information you need to obtain varies depending on your auth provider. Therefore, you might need to work with your IT admins to help get the information that you need to make the connection, especially if you’re not familiar with the infrastructure behind your auth provider.
 
