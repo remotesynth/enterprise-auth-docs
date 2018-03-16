@@ -65,8 +65,19 @@ When you tap the **Log in** button, if all went well, you should be prompted to 
 
 And that’s it! You’ve now successfully built an app that can connect to an enterprise authentication provider.
 
-<h2 id="step-5">Step 5: MOAR KINVEY</h2>
+<h2 id="step-5">How does this work?</h2>
 
-Sidekick’s enterprise authentication implementation is powered by [Progress Kinvey](https://www.kinvey.com/), a leading backend app development platform, with powerful capabilities to connect to and use enterprise data sources.
+Sidekick’s enterprise authentication implementation is powered by [Progress Kinvey](https://www.kinvey.com/), a leading backend app development platform, with powerful capabilities to connect to and use enterprise data sources. As part of the process of setting up the Enterprise Auth feature, NativeScript Sidekick created a Kinvey account using the Telerik credentials that you log into Sidekick with. Kinvey has a feature called [Mobile Identity Connect](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect) that is designed to connect with existing identity and single sign-on solutions. This is the feature that powers the Enteprise Auth template.
 
-Here are some other things you can do.
+You can see the Mobile Identity Connect service that NativeScript Sidekick automatically created for you inside Kinvey by logging into the [Kinvey Console](https://console.kinvey.com) using the same credentials that you use for NativeScript Sidekick. You should have an app that corresponds to your NativeScript Sidekick project under the "Apps" tab, as well as a service corresponding to the authentication provider you connected to under the "Service Catalog" tab. Feel free to access and customize these further if you wish - there are many additional customization options available within the Kinvey Console.
+
+<h3 id="kinvey-next-steps">What else can I do with my Kinvey account?</h3>
+
+Your Kinvey account also gives you access to a ton of additonal features beyond just Mobile Identity Connect. Some of them include:
+
+* [NoSQL data stores](https://devcenter.kinvey.com/nativescript/guides/datastore) and [file stores](https://devcenter.kinvey.com/nativescript/guides/files) that can serve as a back end to your app.
+* [Push notification](https://devcenter.kinvey.com/nativescript/guides/push) support for your NativeScript app.
+* [RapidData](https://devcenter.kinvey.com/nativescript/guides/rapid-data) lets you connect your NativeScript mobile app to existing enterprise data sources like SQL Server, SharePoint, Salesforce, SAP and REST.
+* [FlexServices](https://devcenter.kinvey.com/nativescript/guides/flex-services) allow you to build complex data integrations or add functional business logic that lives in the cloud (aka serverless).
+
+For a full overview of Kinvey features and how to use them, visit the [Kinvet Dev Center](https://devcenter.kinvey.com/nativescript).
