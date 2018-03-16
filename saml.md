@@ -58,7 +58,7 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 5. Choose "SAML-based Sign-on" from the drop down.
 
-  ![SAML-based sign-on](saml-based.png)
+  ![SAML-based sign-on](images/saml-based.png)
 
 6. Fill in the following values:
 
@@ -67,11 +67,11 @@ The following steps will walk you through creating a new Azure Active Directory 
   * Click on "Show sdvanced URL settings"
   * For "Sign on URL" enter `https://auth.kinvey.com/`
 
-  ![Azure SAML settings](saml-settings-azure.png)
+  ![Azure SAML settings](images/saml-settings-azure.png)
 
 7. Scroll down to the SAML Signing Certificate. If it is not active yet, enable it and then download the Base64 version. (More details about managing signing certificates within Azure can be found in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).)
 
-  ![Base64 signing certificate](signing-certificate.png)
+  ![Base64 signing certificate](images/signing-certificate.png)
 
 8. Click the "Save" button to save your settings.
 
