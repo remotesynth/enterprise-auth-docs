@@ -69,7 +69,7 @@ The following steps will walk you through creating a new Azure Active Directory 
 
   ![Azure SAML settings](saml-settings-azure.png)
 
-7. Scroll down to the SAML Signing Certificate. If it is not active yet, enable it and then download the Base64 version.
+7. Scroll down to the SAML Signing Certificate. If it is not active yet, enable it and then download the Base64 version. (More details about managing signing certificates within Azure can be found in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).)
 
   ![Base64 signing certificate](signing-certificate.png)
 
