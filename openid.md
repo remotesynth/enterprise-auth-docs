@@ -79,7 +79,7 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 In order to test the log in process, Azure Active Directory will need a user. To add a user, go to Active Directory, click **Users and Groups**, then **All Users**, and finally **New User**. For testing purposes, you could add yourself.
 
-### Providing enterprise authentication form values for Azure
+### Providing Open ID Connect form values for Azure
 
 Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
 
