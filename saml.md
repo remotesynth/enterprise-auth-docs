@@ -48,35 +48,50 @@ The following steps will walk you through creating a new Azure Active Directory 
 	
 	![Enterprise applications](images/enterprise-applications.png)
 
-3. Click "+ New application" and then choose "Non-gallery application".
+3. Click "+ New application" and then choose "Non-gallery application". Give your application a name (this can be whatever you like) and click "Add".
 
-![Non-gallery application](images/non-gallery-app.png)
-	
-TODO finish steps
+  ![Non-gallery application](images/non-gallery-app.png)
 
-In order to test the log in process, Azure Active Directory will need a user. To add a user, go to Active Directory, click "Users and Groups", then "All Users", and finally "New User". For testing purposes, you could add yourself.
+4. Click on "Configure single sign-on".
+
+![Configure single sign-on](images/configure-single-sign-on.png)
+
+5. Choose "SAML-based Sign-on" from the drop down.
+
+  ![SAML-based sign-on](saml-based.png)
+
+6. Fill in the following values:
+
+  * For "Identifier" enter `https://auth.kinvey.com/kinvey-mobile-identity-connect`
+  * For "Reply URL" entr `https://auth.kinvey.com/v3/saml/assertion`
+  * Click on "Show sdvanced URL settings"
+  * For "Sign on URL" enter `https://auth.kinvey.com/`
+
+  ![Azure SAML settings](saml-settings-azure.png)
+
+7. Scroll down to the SAML Signing Certificate. If it is not active yet, enable it and then download the Base64 version.
+
+  ![Base64 signing certificate](signing-certificate.png)
+
+8. Click the "Save" button to save your settings.
+
+In order to test the log in process, your Azure Active Directory application will need a user. To add a user, click on the "Assign a user for testing" option within Azure's enterprise application quick start guide. The easiest way to start is by adding your own user to the application.
 
 ### Enterprise Authentication Form Field Values for Azure
 
 Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
 
 * **Name**: Any name you choose.
-* **Provider URI** and **Grant Endpoint**: To get these values from within Azure, go to Azure Active Directory, choose "App registrations" and then "Endpoints".
+* **Provider URI**: To get this value from within Azure, go to Azure Active Directory, choose "App registrations" and then "Endpoints".
 
   ![Choosing the endpoints](images/endpoints1.png)
 
-  On the subsequent page, the Provider URI is the OAuth 2.0 Token Endpoint value and the Grant Endpoint is the OAuth 2.0 Authorization Endpoint value.
+  On the subsequent page, the Provider URI is the SAML-P Sign-on Endpoint value value.
 
-  ![Endpoints list](images/endpoints2.png)
+  ![Endpoints list](images/saml-endpoints.png)
 
-* **Client ID** is the application ID found by going to Azure Active Directory and then choosing "App registrations".
-
-  ![Application ID](images/applicationID.png)
-
-* **Client Secret** is the value of the key created in step 8 above. If you did not copy the key during that step, it is hidden and you'll simply need to create a new key.
-* **User ID Attribute** and **User ID Endpoint** can both be blank.
-* **Scope** should be set to `email` to give your app access to the user's email address.
-* **Include client ID in token request?** and **Include client secret in token request?** can both remain "No".
+* **Certificate text** is the contents of the Base64 signing certificate you downloaded. Open the file using a text editor and copy the contents between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines into the form field.
+* **Name ID Format URI** for Azure Active Directory should be `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. (You can find more information about the various values Azure accepts here and what they mean in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#nameidpolicy))
 
 TODO: add a screenshot of the filled in Sidekick form.
 
